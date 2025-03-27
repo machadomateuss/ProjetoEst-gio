@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Conexão com o banco
+// conexão com o banco
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -14,7 +14,7 @@ const db = mysql.createConnection({
   database: "cadastro"
 });
 
-// ROTA PARA CADASTRO
+// cadastro
 app.post("/signup", (req, res) => {
   const { nome, email, senha } = req.body;
 
@@ -29,7 +29,7 @@ app.post("/signup", (req, res) => {
   });
 });
 
-// ROTA PARA LOGIN
+// login
 app.post("/login", (req, res) => {
   const { email, senha } = req.body;
 
@@ -52,7 +52,7 @@ app.post("/login", (req, res) => {
   });
 });
 
-// Iniciar servidor
+// servidor
 app.listen(3001, () => {
   console.log("Servidor rodando na porta 3001");
 });
